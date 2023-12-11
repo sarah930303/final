@@ -15,22 +15,26 @@
             <input type="submit" value="註冊">
         </form>
     </div>
-
     <script>
         function registerUser() {
             let newUsername = registerForm.newUsername.value.trim();
             let newPhone = registerForm.newPhone.value.trim();
+            if (!newUsername || !newPhone) {
+                alert('請填寫所有必填欄位。');
+                return false;
+            }
+            try {
+                let staffList = JSON.parse(localStorage.getItem('staffList')) || [];
+                staffList.push({ name: newUsername, phone: newPhone });
+                localStorage.setItem('staffList', JSON.stringify(staffList));
 
-            let staffList = JSON.parse(localStorage.getItem('staffList')) || [];
-            staffList.push({ name: newUsername, phone: newPhone });
-            localStorage.setItem('staffList', JSON.stringify(staffList));
-
-            alert('註冊成功！請返回登入頁面進行登入。');
-
-            // 跳轉回 index 頁面
-            window.location.href = 'index.html';
-
-            return false; // 阻止表單提交
+                alert('註冊成功！請返回登入頁面進行登入。');
+                window.location.href = 'index.html';
+            } catch (error) {
+                console.error('Error during registration:', error);
+                alert('註冊失敗。請稍後再試。');
+            }
+            return false; 
         }
     </script>
 </body>
