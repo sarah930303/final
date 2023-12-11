@@ -24,8 +24,13 @@
             let staffList = JSON.parse(localStorage.getItem('staffList')) || [];
             staffList.push({ name: newUsername, phone: newPhone });
             localStorage.setItem('staffList', JSON.stringify(staffList));
+
             alert('註冊成功！請返回登入頁面進行登入。');
-            return false; 
+
+            // 跳轉回 index 頁面
+            window.location.href = 'index.html';
+
+            return false; // 阻止表單提交
         }
     </script>
 </body>
