@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登錄網頁</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>登錄網頁</h1>
+    <div>
+        <form name="loginForm" onsubmit="return authenticate()">
+            帳號：<input type="text" name="username" placeholder="輸入員工姓名"><br><br>
+            密碼：<input type="password" name="password" placeholder="輸入電話號碼"><br><br>
+            <input type="submit" value="登入">
+        </form>
+        <p>還沒有帳號？ <a href="register.html">註冊</a></p>
+        <p>忘記密碼？ <a href="forgot_password.html">找回密碼</a></p>
+    </div>
+
+    <script>
+        function authenticate() {
+            let username = loginForm.username.value.trim();
+            let password = loginForm.password.value.trim();
+
+            let staffList = JSON.parse(localStorage.getItem('staffList')) || [];
+
+            for (let i = 0; i < staffList.length; i++) {
+                if (staffList[i].name === username && staffList[i].phone === password) {
+                    window.location.href = 'https://sarah930303.github.io/ex09-01/';
+                    return false; 
+                }
+            }
+
+            alert('請輸入正確的帳號密碼');
+            return false;
+        }
+    </script>
+</body>
+</html>
+
+

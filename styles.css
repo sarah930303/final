@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f7e1f5; 
+}
+
+h1 {
+    color: #ff007f;
+}
+
+form {
+    max-width: 300px;
+    background-color: #ffe4f6; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    transition: transform 0.3s ease-in-out; /* 添加平滑的過渡效果 */
+}
+
+form:hover {
+    transform: scale(1.02); /* 悬浮時稍微縮放表單 */
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ff007f;
+    border-radius: 5px;
+    transition: border-color 0.3s ease-in-out; /* 添加平滑的邊框顏色變化 */
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #d6006d; /* 獲取焦點時改變邊框顏色 */
+}
+
+input[type="submit"] {
+    background-color: #ff007f;
+    color: white;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out; /* 添加平滑的背景顏色變化 */
+}
+
+input[type="submit"]:hover {
+    background-color: #d6006d;
+}
+
