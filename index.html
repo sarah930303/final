@@ -11,7 +11,11 @@
     <div>
         <form name="loginForm" onsubmit="return authenticate()">
             帳號：<input type="text" name="username" placeholder="輸入員工姓名"><br><br>
-            密碼：<input type="password" name="password" placeholder="輸入電話號碼"><br><br>
+            密碼：<input type="password" name="password" id="password" placeholder="輸入電話號碼">
+            <label for="showPassword">
+                <input type="checkbox" id="showPassword" onchange="togglePasswordVisibility()">
+                顯示密碼
+            </label><br><br>
             <input type="submit" value="登入">
         </form>
         <p>還沒有帳號？ <a href="register.html">註冊</a></p>
@@ -28,12 +32,19 @@
             for (let i = 0; i < staffList.length; i++) {
                 if (staffList[i].name === username && staffList[i].phone === password) {
                     window.location.href = 'https://sarah930303.github.io/ex09-01/';
-                    return false; 
+                    return false;
                 }
             }
 
             alert('請輸入正確的帳號密碼');
             return false;
+        }
+
+        function togglePasswordVisibility() {
+            let passwordInput = document.getElementById('password');
+            let showPasswordCheckbox = document.getElementById('showPassword');
+
+            passwordInput.type = showPasswordCheckbox.checked ? 'text' : 'password';
         }
     </script>
 </body>
