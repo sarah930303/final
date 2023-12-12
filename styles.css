@@ -1,20 +1,23 @@
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
-    background-color: #f7e1f5; 
+    background-color: #fde4ec; /* Light pink background */
 }
 
 h1 {
     color: #ff007f;
 }
 
+div {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
 form {
-    max-width: 300px;
-    background-color: #ffe4f6; 
+    background-color: #ffc2d6; /* Lighter pink for the form */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    margin: 0 auto;
     transition: transform 0.3s ease-in-out;
 }
 
@@ -24,11 +27,11 @@ form:hover {
 
 input[type="text"], input[type="password"] {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
+    padding: 12px; /* Increased padding for better visibility */
+    margin-bottom: 15px;
     box-sizing: border-box;
-    border: 1px solid #ff007f;
-    border-radius: 5px;
+    border: 2px solid #ff007f;
+    border-radius: 8px;
     transition: border-color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
@@ -40,15 +43,26 @@ input[type="text"]:focus, input[type="password"]:focus {
 input[type="submit"] {
     background-color: #ff007f;
     color: white;
-    padding: 12px;
+    padding: 14px; /* Increased padding for better visibility */
     border: none;
     cursor: pointer;
     width: 100%;
-    border-radius: 5px;
+    border-radius: 8px;
     transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 input[type="submit"]:hover {
     background-color: #d6006d;
     transform: scale(1.05);
+}
+
+a {
+    text-decoration: none;
+    color: #ff007f;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #d6006d;
 }
